@@ -1,5 +1,5 @@
 
-domaine = 'residentiel'
+domaine = 'consommation_brute_gaz_grtgaz'
 
 def prepare_data(df, coef_t,coef_tst):
     

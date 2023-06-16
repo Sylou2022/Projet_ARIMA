@@ -4,7 +4,7 @@ from lire import ARIMAModel
 
 def main():
     
-    df = preprocessing("C:/Users/sylva/OneDrive/Bureau/PROJET_ARIMA_devoir/gaz_perspectives_2022_2050.csv")
+    df = preprocessing("C:/Users/sylva/AppData/Local/GitHubDesktop/app-3.2.0/Projet_ARIMA/consommation-quotidienne-brute.csv")
     t_train, t_test ,t_validation, y_train, y_test, y_validation=prepare_data(df, 0.6, 0.2)
     
     print(t_train)

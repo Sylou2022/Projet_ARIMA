@@ -16,7 +16,7 @@ import statsmodels.graphics.tsaplots as stg
 #print(df)
 
 def preprocessing(file):
-    df = pd.read_csv("C:/Users/sylva/OneDrive/Bureau/PROJET_ARIMA_devoir/gaz_perspectives_2022_2050.csv")
+    df = pd.read_csv("C:/Users/sylva/AppData/Local/GitHubDesktop/app-3.2.0/Projet_ARIMA/consommation-quotidienne-brute.csv")
     
     
     # affichage de la donneé
@@ -25,10 +25,9 @@ def preprocessing(file):
     # df.shape
     
     # Suppression des colonnes unitiles
-    # df = df.drop('batiment', axis=1)
-    df = df.drop('mobilite', axis=1)
-    df = df.drop('industrie', axis=1) 
-    df = df.drop('production_d_electricite_centralisee_et_cogeneration_industrielle', axis=1)
+
+    df = df.drop(['date_heure','consommation_brute_gaz_totale', 'consommation_brute_electricite_rte', 'statut_rte', 'consommation_brute_totale', 'consommation_brute_gaz_terega', 'statut_terega' ], axis=1)
+
     
     # affichage de la donneé
     print("\n")
