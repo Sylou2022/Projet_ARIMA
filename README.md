@@ -4,3 +4,4 @@
     Excustion: 
     le fichier "main.py" est le fichier à executer
     la data prep dans le fichier prepare_da et le preprocessing dans "preproce.py"
+Le document PowerPoint est Modèle ARIMA.pptx
