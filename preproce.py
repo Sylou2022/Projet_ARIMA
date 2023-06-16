@@ -22,10 +22,9 @@ def main():
     print(df)
     print("\n")
     
-    # # Suppression des colonnes inutiles
+    # # Suppression des colonnes 
     df = df.drop(['location'], axis=1)
     
-    # Affichage de la donnée après suppression des colonnes
     print(df)
     print("\n")
   
@@ -53,12 +52,7 @@ def main():
     # Affichage des statistiques descriptives
     print(df1.describe())
     
-    # Nettoyage de la donnée
-    # df1 = df1.drop('tertiaire', axis=1)
-    # df1 = df1.drop('agriculture', axis=1)
-    # df1.plot()
-    # plt.show()
-    # df1 = df1.drop('dt', axis=1)
+
     print(df1)
     print("\n")
    
@@ -66,22 +60,22 @@ def main():
     sns.distplot(df1['total_cases'], hist=False)
     plt.show()
     
-    # Forme de modèle
+    # La Forme du modèle
     print("Additif".center(50, "-"))
     MDA = seasonal_decompose(df1['total_cases'], period=12).plot()
     print("Multiplicatif".center(50, "-"))
     MDM = seasonal_decompose(df1['total_cases'], model='multiplicative', period=12).plot()
     
-    # On en déduit que c'est un modèle multiplicatif car la variance est trop grande au niveau de l'additif.
-    # Rendons additif ce modèle en utilisant la technique du logarithme
+    #   La variance est trop grande ce qui nous donne un modèle multiplicatif.
+    
     df1['total_cases'] = np.log(df1['total_cases'])
     print(df1)
     
-    # Vérification
+    # La Vérification
     sns.distplot(df1['total_cases'], hist=False)
     plt.show()
     
-    # Deuxième approche : la différenciation
+    # Une seconde approche est: la différenciation
     df1 = df1.diff().dropna()
     print(df1)
     
@@ -89,7 +83,7 @@ def main():
     sns.distplot(df1['total_cases'], hist=False)
     plt.show()
     
-    # ACF (Autocorrelation Function)
+    # ACF (Autocorrelation)
     resultat_adf1 = adfuller(df1['total_cases'])
     print(resultat_adf1)
     ACF = resultat_adf1[0]
@@ -101,7 +95,7 @@ def main():
     result.plot()
     plt.show()
     
-    # P_value est inférieure à 5%
+
     
     # Courbe d'autocorrélation et autocorrélation partielle
     stg.plot_acf(df1['total_cases'])
