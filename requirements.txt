@@ -1,1 +1,15 @@
 matplotlib==3.7.1
+tqdm==4.64.1
+chunked==0.0.1
+numpy==1.20.3
+python-time==0.3.0
+statsmodels==0.13.2
+scikit-learn==1.2.2
+preprocessing==0.1.13
+pandas==1.2.0
+seaborn==0.11.2
+
+
+
+
+

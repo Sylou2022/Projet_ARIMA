@@ -41,13 +41,15 @@ class ARIMAModel:
              
 
             plt.figure(figsize=(15, 6))
+            
             # train base
             plt.plot(self.t_train, self.y_train, "o", color='b', label="Train base")
+            
             # validation base
             plt.plot(self.t_validation, self.y_validation, "o", color='r', label="Validation base")
+            
             # test base
             plt.plot(self.t_test, self.y_test, "o", color='g', label="Test base")
-
             plt.plot(np.concatenate([self.t_train, self.t_validation, self.t_test]), train_predictions, "-", color='b', label="Train prediction")
             plt.plot(self.t_validation, validation_predictions, "-", color='r', label="Validation prediction")
             plt.plot(self.t_test, test_predictions, "-", color='g', label="Test prediction")
